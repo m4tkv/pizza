@@ -1,0 +1,38 @@
+[
+  {
+    "id": 70,
+    "name": "Мексиканская",
+    "price": 390,
+    "img": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/47dde0fb-0ace-4f7b-a6f5-a78fc7883315.jpg"
+  },
+  {
+    "id": 71,
+    "name": "Cупермясная",
+    "price": 430,
+    "img": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/c33c9958-d6c0-4b60-a851-0a2e0ae15aa8.jpg"
+  },
+  {
+    "id": 72,
+    "name": "Четрые сыра",
+    "price": 390,
+    "img": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/2555c453-29b0-4885-8e15-2227ca8b17df.jpg"
+  },
+  {
+    "id": 73,
+    "name": "Додо",
+    "price": 380,
+    "img": "https://cdn.dodostatic.net/static/Img/Products/9056ce8bccec450a81154082e8feac66_292x292.jpeg"
+  },
+  {
+    "id": 74,
+    "name": "Мясная",
+    "price": 370,
+    "img": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/089587de-c2b3-42a7-b1a5-02e6a3de2ad8.jpg"
+  },
+  {
+    "id": 75,
+    "name": "Ветчина и грибы",
+    "price": 350,
+    "img": "https://cdn.dodostatic.net/static/Img/Products/6a0f303734b042618984fe96bc681006_292x292.jpeg"
+  }
+]
