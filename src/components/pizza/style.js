@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Platform} from 'react-native';
 
 import {normalize} from 'style';
 import {GRAY, WHITE, BLACK} from 'constants';
@@ -76,7 +77,7 @@ export const RandomContainer = styled.View`
     height: 5,
   };
   shadow-opacity: 1;
-  shadow-radius: 10;
-  elevation: 7;
+  shadow-radius: ${Platform.OS === 'ios'?5:10};
+  elevation: ${Platform.OS === 'ios'?1:7};
 `;
 export const RandomButton = styled.TouchableOpacity``;

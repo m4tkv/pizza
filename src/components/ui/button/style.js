@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Platform} from 'react-native';
 
 import {normalize} from 'style';
 import {BLACK} from 'constants';
@@ -12,8 +13,8 @@ export const ButtonView = styled.TouchableOpacity`
     height: 5,
   };
   shadow-opacity: 1;
-  shadow-radius: 10;
-  elevation: 7;
+  shadow-radius: ${Platform.OS === 'ios'?5:10};
+  elevation: ${Platform.OS === 'ios'?1:7};
 `;
 
 export const ButtonText = styled.Text`
