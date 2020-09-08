@@ -1,6 +1,9 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 
+import {normalize} from 'style';
+import {Arrow} from 'svg';
+
 import {
   HeaderContainer,
   HeaderBackContainer,
@@ -26,7 +29,7 @@ const Type2 = ({title = '', backTitle = ''}) => {
     <HeaderContainer>
       <HeaderBackContainer>
         <HeaderBackText onPress={() => navigation.goBack()}>
-          {`<`}
+          <Arrow styles={{paddingTop: normalize(5)}} />
           {backTitle}
         </HeaderBackText>
       </HeaderBackContainer>

@@ -1,6 +1,7 @@
 import {observable, action} from 'mobx';
 
-import {getRandomInt} from 'common';
+import {getRandomInt, checkVerticalSwipe} from 'common';
+import {SWIPE_TYPES, RIGHT} from 'constants';
 
 export default class {
   pizza = [];
@@ -16,26 +17,34 @@ export default class {
     this.rightSelected = 1;
     this.loadPizza();
   };
+
   reset = () => {
     this.isLoading = true;
     this.rightSelected = null;
     this.leftSelected = null;
     this.pizza = [];
   };
+
   @action loadPizza = () => {
     const _pizza = require('data/pizza.json');
     if (_pizza) this.pizza = _pizza;
     this.isLoading = false;
   };
+
   @action onSwipe = ({type, dir}) => {
-    if (['SWIPE_LEFT', 'SWIPE_RIGHT'].includes(dir)) return;
-    if (type === 'right') {
+    if (!checkVerticalSwipe(dir)) return;
+
+    if (type === RIGHT) {
       this.rightSelected = this.prepare(
-        dir === 'SWIPE_UP' ? this.rightSelected + 1 : this.rightSelected - 1,
+        dir === SWIPE_TYPES.SWIPE_UP
+          ? this.rightSelected + 1
+          : this.rightSelected - 1,
       );
     } else {
       this.leftSelected = this.prepare(
-        dir === 'SWIPE_UP' ? this.leftSelected + 1 : this.leftSelected - 1,
+        dir === SWIPE_TYPES.SWIPE_UP
+          ? this.leftSelected + 1
+          : this.leftSelected - 1,
       );
     }
   };

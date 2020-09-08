@@ -4,10 +4,11 @@ import {useObserver} from 'mobx-react';
 import GestureRecognizer from 'react-native-swipe-gestures';
 
 import {useStore} from 'hooks';
-import {SAFETY_ORANGE} from 'constants';
+import {SAFETY_ORANGE, RIGHT, LEFT} from 'constants';
 import {Img, Button} from 'ui';
 import {getMiddlePrice} from 'common';
 import Random from './random';
+import {normalize} from 'style';
 
 import {
   Wrapper,
@@ -53,7 +54,7 @@ const LeftView = () => {
     <HalfView>
       <GestureRecognizer
         onSwipe={(direction) =>
-          PizzaStore.onSwipe({type: 'left', dir: direction})
+          PizzaStore.onSwipe({type: LEFT, dir: direction})
         }>
         <PizzaPreviewImage>
           <Img
@@ -84,7 +85,7 @@ const RightView = () => {
     <HalfView rtl>
       <GestureRecognizer
         onSwipe={(direction) =>
-          PizzaStore.onSwipe({type: 'right', dir: direction})
+          PizzaStore.onSwipe({type: RIGHT, dir: direction})
         }>
         <PizzaPreviewImage rtl>
           <Img
@@ -117,8 +118,12 @@ const Total = () => {
       </TotalText>
       <Button
         text={'Объеденить половинки'}
-        styles={{marginRight: 10, marginLeft: 10, marginTop: 15}}
-        onPress={() => alert('Половинки объеденены')}
+        styles={{
+          marginRight: normalize(10),
+          marginLeft: normalize(10),
+          marginTop: normalize(15),
+        }}
+        onPress={() => alert('Пицца составленна')}
       />
     </TotalContainer>
   );
